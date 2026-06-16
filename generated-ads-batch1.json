@@ -1,0 +1,227 @@
+[
+  {
+    "framework": "hook-led",
+    "primaryText": "The turnkey rental pitch is the #1 lie sold to beginners.\n\nYou pay $140k for a $60k property with $25k of work.\n\nThe 12% cap rate? Actually 5% after real costs.",
+    "headline": "The Truth About Turnkey Rentals",
+    "description": "Weekly. No guru nonsense.",
+    "cta": "Subscribe",
+    "visual": "Kitchen table with calculator, property listing, and contractor invoices spread out under harsh overhead light.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "stat-led",
+    "primaryText": "$84k projected Airbnb income. $48k actual.\n\nAfter $44k in expenses, you're losing money.\n\nI run the real numbers on short-term rentals.",
+    "headline": "Real STR Numbers",
+    "description": "5-minute weekly read",
+    "cta": "Sign Up",
+    "visual": "Modest suburban house with a small 'For Rent' sign tilted in the front yard.",
+    "angle": "short_term"
+  },
+  {
+    "framework": "story-led",
+    "primaryText": "I trusted the wrong people. It cost me $500k.\n\nNow I write a newsletter exposing what real estate gurus won't tell you.\n\nThe fine print they hope you miss.",
+    "headline": "A $500k Lesson",
+    "description": "Plain English. Real deals.",
+    "cta": "Learn More",
+    "visual": "Stack of legal documents with a magnifying glass highlighting fine print clauses.",
+    "angle": "lesson_500k"
+  },
+  {
+    "framework": "pain-point-led",
+    "primaryText": "Every real estate course speaks in code.\n\nCapital stack. Mezz debt. Preferred returns.\n\nI translate the jargon keeping you out of good deals.",
+    "headline": "The Capital Stack, Translated",
+    "description": "Weekly debunking",
+    "cta": "Subscribe",
+    "visual": "Worn notebook with hand-drawn diagrams explaining deal structures on graph paper.",
+    "angle": "capital_stack"
+  },
+  {
+    "framework": "curiosity-gap-led",
+    "primaryText": "Everyone says build an ADU.\n\nHere's what the brochures leave out.\n\nThe permits, the setbacks, the real cost per square foot.",
+    "headline": "The Truth About ADUs",
+    "description": "Real numbers weekly",
+    "cta": "Learn More",
+    "visual": "Backyard with construction materials and permit notices posted on a half-built structure.",
+    "angle": "adu"
+  },
+  {
+    "framework": "hook-led",
+    "primaryText": "You ARE the exit liquidity.\n\nThat turnkey rental was optimized for the seller's exit, not your returns.\n\nI show you the markup math.",
+    "headline": "Turnkey Truth",
+    "description": "No hype. Just math.",
+    "cta": "Subscribe",
+    "visual": "Memphis duplex with peeling paint and an overgrown lawn under gray skies.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "stat-led",
+    "primaryText": "Year 2: HVAC dies ($4,500)\nYear 3: Tenant turnover ($2,800)\nYear 4: New roof ($9,500)\n\nTurnkey rentals aren't passive. Here's proof.",
+    "headline": "$16,800 in Hidden Costs",
+    "description": "Weekly reality check",
+    "cta": "Sign Up",
+    "visual": "HVAC unit being replaced by contractors on the side of a rental property.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "story-led",
+    "primaryText": "I haven't bought a property in two years.\n\nSometimes the smart money move is no move.\n\nI write about what really works. And what doesn't.",
+    "headline": "Why I Haven't Bought",
+    "description": "Honest real estate",
+    "cta": "Subscribe",
+    "visual": "Empty residential lot with a 'For Sale' sign that's been there so long it's faded.",
+    "angle": "why_not_buy"
+  },
+  {
+    "framework": "pain-point-led",
+    "primaryText": "STR insurance costs $5,500 vs $1,500 standard.\n\nNobody mentions that in the Airbnb pitch.\n\nI read the fine print so you don't have to.",
+    "headline": "Hidden STR Costs",
+    "description": "5 minutes weekly",
+    "cta": "Learn More",
+    "visual": "Insurance claim form next to a damaged vacation rental property invoice.",
+    "angle": "short_term"
+  },
+  {
+    "framework": "curiosity-gap-led",
+    "primaryText": "The day your city votes a 90-day cap...\n\nYour Airbnb property loses 30% of its value.\n\nI explain what the gurus won't.",
+    "headline": "The Airbnb Truth",
+    "description": "Real investor. Real losses.",
+    "cta": "Subscribe",
+    "visual": "City council meeting room with empty chairs and ordinance papers on the podium.",
+    "angle": "short_term"
+  },
+  {
+    "framework": "hook-led",
+    "primaryText": "Deferred maintenance doesn't disappear when a house gets painted.\n\nIt just gets a 12-month reprieve.\n\nI show you what to really look for.",
+    "headline": "What Paint Hides",
+    "description": "Weekly truth-telling",
+    "cta": "Sign Up",
+    "visual": "Close-up of water damage behind freshly painted siding on a rental property.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "stat-led",
+    "primaryText": "Negative 24% cash-on-cash return.\n\nThat's my actual Airbnb number after real expenses.\n\nYou bought a job. At the top of the market.",
+    "headline": "My Airbnb Lost Money",
+    "description": "Real numbers weekly",
+    "cta": "Subscribe",
+    "visual": "Spreadsheet on laptop screen showing negative returns circled in red pen.",
+    "angle": "short_term"
+  },
+  {
+    "framework": "story-led",
+    "primaryText": "It's expensive to be poor.\n\nThe money math works against you in ways nobody explains.\n\nI break down what to actually do about it.",
+    "headline": "Expensive to Be Poor",
+    "description": "Plain English finance",
+    "cta": "Learn More",
+    "visual": "Stack of overdue bills next to a denied loan application on a kitchen counter.",
+    "angle": "expensive_poor"
+  },
+  {
+    "framework": "pain-point-led",
+    "primaryText": "Property managers charge 10% of rent.\n\nPlus $300/month in hidden fees nobody mentions.\n\nI expose the real cost of 'passive' income.",
+    "headline": "Hidden PM Fees",
+    "description": "Weekly debunking",
+    "cta": "Subscribe",
+    "visual": "Property management invoice with multiple line-item charges highlighted in yellow.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "curiosity-gap-led",
+    "primaryText": "Senior debt. Mezz. Equity. Preferred returns.\n\nThe jargon keeps regular people out of good deals.\n\nI translate it all. Plain English.",
+    "headline": "Deal Jargon Decoded",
+    "description": "5-minute weekly read",
+    "cta": "Sign Up",
+    "visual": "Whiteboard with complex real estate deal structure being erased and rewritten simply.",
+    "angle": "capital_stack"
+  },
+  {
+    "framework": "hook-led",
+    "primaryText": "Going in romantic on an Airbnb will cost you six figures.\n\nOccupancy slides from 60% to 40% as supply floods in.\n\nI show you the real math.",
+    "headline": "Airbnb Reality Check",
+    "description": "No guru nonsense",
+    "cta": "Subscribe",
+    "visual": "Vacant vacation rental with calendar showing multiple unbooked dates crossed out.",
+    "angle": "short_term"
+  },
+  {
+    "framework": "stat-led",
+    "primaryText": "$125k Memphis rental:\n$50,400 gross rent over 4 years.\n$16,800 unplanned repairs.\n\nThat's before PM fees. The truth about turnkey.",
+    "headline": "Real Memphis Numbers",
+    "description": "Weekly truth-telling",
+    "cta": "Learn More",
+    "visual": "Tired Memphis triplex with contractors' trucks parked outside for repairs.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "story-led",
+    "primaryText": "I lost $500k trusting the wrong people.\n\nNow I write about what real estate courses won't teach you.\n\nThe scars make me a better teacher.",
+    "headline": "$500k Tuition",
+    "description": "Real losses. Real lessons.",
+    "cta": "Subscribe",
+    "visual": "Handshake agreement document torn in half on a wooden desk.",
+    "angle": "lesson_500k"
+  },
+  {
+    "framework": "pain-point-led",
+    "primaryText": "AirDNA projects $84k. You'll make $48k.\n\nEvery STR projection is a lie.\n\nI run the actual numbers. Weekly.",
+    "headline": "STR Projections Lie",
+    "description": "5 minutes of truth",
+    "cta": "Sign Up",
+    "visual": "Computer screen showing AirDNA projection next to actual bank statement showing less.",
+    "angle": "short_term"
+  },
+  {
+    "framework": "curiosity-gap-led",
+    "primaryText": "The ADU pitch sounds perfect.\n\nUntil you read the setback requirements.\n\nI expose what contractors won't tell you upfront.",
+    "headline": "ADU Fine Print",
+    "description": "Weekly reality check",
+    "cta": "Learn More",
+    "visual": "Measuring tape showing inadequate backyard space next to city permit requirements.",
+    "angle": "adu"
+  },
+  {
+    "framework": "hook-led",
+    "primaryText": "You pay the operator's markup.\n\n$60k property plus $25k work equals $140k to you.\n\nTurnkey is how beginners get fleeced.",
+    "headline": "Turnkey Markup Math",
+    "description": "Real deals. Real numbers.",
+    "cta": "Subscribe",
+    "visual": "Side-by-side comparison of identical houses with different price tags.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "stat-led",
+    "primaryText": "12% advertised cap rate.\n5% actual after real costs.\n\nI show you where the other 7% goes.\n\nEvery week. No fluff.",
+    "headline": "Where 7% Disappears",
+    "description": "Plain English truth",
+    "cta": "Sign Up",
+    "visual": "Calculator with receipts showing maintenance costs eating into rental income.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "story-led",
+    "primaryText": "Two years. Zero properties bought.\n\nSometimes doing nothing beats doing something stupid.\n\nI write about when to actually pull the trigger.",
+    "headline": "When NOT to Buy",
+    "description": "Honest investing",
+    "cta": "Subscribe",
+    "visual": "Real estate listings crossed out in red marker on a kitchen table.",
+    "angle": "why_not_buy"
+  },
+  {
+    "framework": "pain-point-led",
+    "primaryText": "The deal you're buying was optimized for someone else's exit.\n\nNot your returns.\n\nI decode the pitches. Plain English. Weekly.",
+    "headline": "You're the Exit",
+    "description": "No guru nonsense",
+    "cta": "Learn More",
+    "visual": "Closing documents with seller profit highlighted next to buyer's mortgage papers.",
+    "angle": "turnkey"
+  },
+  {
+    "framework": "curiosity-gap-led",
+    "primaryText": "Lease renewal fee. Make-ready charge. Maintenance markup.\n\nYour PM has $300/month in fees you've never heard of.\n\nI name them all.",
+    "headline": "Hidden PM Charges",
+    "description": "Weekly truth 📘",
+    "cta": "Subscribe",
+    "visual": "Property management statement with multiple mysterious fees circled in red ink.",
+    "angle": "turnkey"
+  }
+]

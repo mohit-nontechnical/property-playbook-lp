@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Property Playbook — Overlooked real-estate markets that still cash-flow</title>
+<meta name="description" content="A real-estate investing letter by Mohit Asthana. Breakdowns of the overlooked American cities where real estate still cash-flows — real numbers, the programs, and an honest take on the risks. Free." />
+<meta property="og:title" content="Property Playbook — the cash-flow markets everyone overlooks" />
+<meta property="og:description" content="Real numbers, the programs, and an honest Real Talk section. A real-estate investing letter by Mohit Asthana. Free." />
+<meta property="og:type" content="website" />
+
+<!-- ============ Meta Pixel(s) + journey attribution ============ -->
+<script>
+  // Add one or more pixel IDs here. EVERY event fires to ALL of them, so you can run
+  // a dedicated Property Playbook pixel alongside the account pixel for clean data.
+  window.PP_PIXELS = ["1334124178654448", "951250319950462"]; // dedicated "Property Playbook" + account "Idiots Guide To RE"
+
+  // Pull creative/UTM attribution from the ad link so EVERY pixel event is tagged with
+  // the exact creative_id (= utm_content), angle, and campaign. This is what lets you
+  // build retargeting audiences sliced by creative and funnel stage.
+  (function(){
+    var p = new URLSearchParams(location.search);
+    window.PP_ATTR = {
+      creative_id: p.get('utm_content') || '',
+      angle: p.get('utm_term') || '',
+      campaign: p.get('utm_campaign') || '',
+      source: p.get('utm_source') || ''
+    };
+    try {
+      if (PP_ATTR.creative_id || PP_ATTR.campaign) localStorage.setItem('pp_attr', JSON.stringify(PP_ATTR));
+      else { var s = localStorage.getItem('pp_attr'); if (s) window.PP_ATTR = JSON.parse(s); }
+    } catch(e){}
+  })();
+
+  // Meta Pixel base loader
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  (PP_PIXELS||[]).forEach(function(id){ fbq('init', id); });
+
+  // Helper: fires to all pixels, auto-tagged with attribution. Standard events use
+  // track(); everything else is a granular custom event via trackCustom().
+  window.ppTrack = function(name, params){
+    params = Object.assign({
+      creative_id: PP_ATTR.creative_id, angle: PP_ATTR.angle, campaign: PP_ATTR.campaign
+    }, params || {});
+    var STD = ['ViewContent','Lead','CompleteRegistration','Subscribe','Contact','Search','InitiateCheckout'];
+    if (STD.indexOf(name) >= 0) fbq('track', name, params);
+    else fbq('trackCustom', name, params);
+  };
+
+  // Journey step 1: landed on the LP (from the ad)
+  fbq('track', 'PageView');
+  ppTrack('ViewContent', {
+    content_name: PP_ATTR.angle || 'general',
+    content_category: 'pp_landing',
+    content_ids: [PP_ATTR.creative_id || 'none']
+  });
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1334124178654448&ev=PageView&noscript=1" alt="" /></noscript>
+<!-- ============ /Meta Pixel ============ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#16233a; --paper:#f6f1e7; --brass:#a9803f; --brass2:#c39a55;
+    --char:#272420; --mut:#6f675c; --line:#ddd2bd;
+    --pad: clamp(20px, 5vw, 64px);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Hanken Grotesk',sans-serif;color:var(--char);background:var(--paper);-webkit-font-smoothing:antialiased;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:700;}
+  h1,h2,h3{margin:0;}
+  .h1{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(38px,6.2vw,62px);line-height:1.04;letter-spacing:-.015em;color:var(--ink);margin-top:18px;}
+  .h1 em{font-style:italic;color:var(--brass);}
+  .h2{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(30px,4.4vw,40px);line-height:1.08;color:var(--ink);letter-spacing:-.01em;}
+
+  .head{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;
+    padding:18px var(--pad);border-bottom:1px solid var(--line);background:rgba(246,241,231,.86);backdrop-filter:blur(10px);}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .mark{display:grid;place-items:center;width:38px;height:38px;background:var(--ink);color:var(--paper);
+    font-family:'Newsreader',serif;font-weight:600;font-size:17px;border-radius:4px;flex:0 0 auto;}
+  .mark-sm{width:30px;height:30px;font-size:14px;}
+  .wordmark{font-family:'Newsreader',serif;font-size:clamp(18px,2.6vw,22px);font-weight:500;color:var(--ink);}
+  .nav{display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);white-space:nowrap;font-size:15px;font-weight:600;}
+  .nav-cta{background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:4px;}
+  .nav-archive{color:var(--char);}
+
+  section{padding-left:var(--pad);padding-right:var(--pad);}
+
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,56px);align-items:center;padding-top:clamp(48px,7vw,72px);padding-bottom:clamp(40px,6vw,60px);}
+  .lede{font-size:clamp(17px,2vw,20px);line-height:1.55;color:var(--mut);max-width:540px;margin:22px 0 30px;}
+  .hero-art{position:relative;}
+  .frame{background:#fff;padding:14px 14px 0;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(22,35,58,.4);transform:rotate(-1.4deg);}
+  .frame img{height:clamp(280px,38vw,430px);width:100%;object-fit:cover;}
+  .frame-cap{font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--mut);padding:14px 4px 16px;text-align:center;}
+  .stamp{position:absolute;top:-22px;right:-14px;width:84px;height:84px;border-radius:50%;border:2px solid var(--brass);color:var(--brass);
+    display:grid;place-items:center;text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;line-height:1.3;background:var(--paper);transform:rotate(8deg);}
+
+  .form{display:flex;gap:10px;max-width:480px;flex-wrap:wrap;}
+  .input{flex:1;min-width:200px;font-family:inherit;font-size:16px;padding:15px 18px;border:1px solid var(--line);background:#fff;border-radius:4px;outline:none;color:var(--char);}
+  .input:focus{border-color:var(--brass);box-shadow:0 0 0 3px rgba(169,128,63,.15);}
+  .input.err{border-color:#b4452f;}
+  .btn{font-family:inherit;font-weight:700;font-size:16px;color:var(--paper);background:var(--ink);border:none;padding:15px 24px;border-radius:4px;cursor:pointer;white-space:nowrap;transition:background .15s;}
+  .btn:hover{background:#0e1830;}
+  .errmsg{flex-basis:100%;color:#b4452f;font-size:13px;font-weight:600;margin-top:2px;display:none;}
+  .errmsg.show{display:block;}
+  .success{font-family:'Newsreader',serif;font-style:italic;font-size:19px;color:var(--ink);display:none;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);padding:18px 22px;border-radius:4px;max-width:480px;}
+  .success.show{display:flex;}
+  .check{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--brass);color:#fff;font-style:normal;font-size:15px;flex:0 0 auto;}
+  .trust{font-size:14px;color:var(--mut);margin-top:18px;}
+
+  .pillars{display:flex;flex-wrap:wrap;gap:10px 14px;justify-content:center;padding-bottom:34px;border-bottom:1px solid var(--line);margin:0 var(--pad);padding-left:0;padding-right:0;}
+  .pill{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(16px,2vw,19px);color:var(--ink);}
+  .pill:not(:last-child)::after{content:'·';color:var(--brass);margin-left:14px;}
+
+  .sec{padding-top:clamp(56px,8vw,80px);padding-bottom:clamp(56px,8vw,80px);}
+  .sec-head{max-width:640px;margin-bottom:clamp(32px,5vw,46px);}
+  .sec-head .eyebrow{margin-bottom:10px;display:block;}
+  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,40px);}
+  .col{border-top:2px solid var(--ink);padding-top:22px;}
+  .col-n{font-family:'Newsreader',serif;font-size:15px;color:var(--brass);letter-spacing:.1em;}
+  .col-t{font-family:'Newsreader',serif;font-weight:500;font-size:24px;color:var(--ink);margin:14px 0 10px;}
+  .col-d{font-size:16px;line-height:1.6;color:var(--mut);margin:0;}
+
+  .sample{padding-bottom:clamp(56px,8vw,80px);}
+  .sample-card{position:relative;background:#fff;border:1px solid var(--line);box-shadow:0 40px 80px -50px rgba(22,35,58,.45);
+    padding:clamp(30px,5vw,48px) clamp(26px,5vw,56px) clamp(40px,6vw,56px);max-width:760px;margin:0 auto;overflow:hidden;}
+  .sample-rule{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);padding-bottom:16px;}
+  .sample-h{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,4vw,34px);color:var(--ink);margin:26px 0 18px;}
+  .dropcap{font-family:'Newsreader',serif;font-size:clamp(17px,2.2vw,19px);line-height:1.6;color:var(--char);margin:0 0 16px;}
+  .dropcap::first-letter{float:left;font-size:64px;line-height:.82;padding:6px 12px 0 0;color:var(--brass);font-weight:600;}
+  .sample-p{font-family:'Newsreader',serif;font-size:clamp(17px,2.2vw,19px);line-height:1.6;color:var(--char);margin:0;}
+  .sample-fade{position:absolute;left:0;right:0;bottom:64px;height:120px;background:linear-gradient(transparent,#fff);pointer-events:none;}
+  .sample-lock{position:relative;text-align:center;font-weight:700;color:var(--brass);margin-top:24px;}
+
+  .markets{background:var(--ink);}
+  .markets .eyebrow{color:var(--brass2);}
+  .markets .h2{color:var(--paper);}
+  .mlist{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14);}
+  .mrow{display:grid;grid-template-columns:1fr 1.5fr auto;align-items:baseline;gap:24px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.14);}
+  .mcity{font-family:'Newsreader',serif;font-size:clamp(22px,3vw,26px);color:var(--paper);}
+  .msub{font-size:16px;color:#b7b0a4;}
+  .mcap{font-family:'Newsreader',serif;font-size:clamp(22px,3vw,26px);color:var(--brass2);text-align:right;white-space:nowrap;}
+  .mcap small{font-size:13px;color:#8b8478;}
+  .mread{font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:600;color:#b7b0a4;}
+
+  .author{display:flex;gap:clamp(28px,4vw,48px);align-items:center;border-top:1px solid var(--line);
+    padding-top:clamp(56px,8vw,80px);padding-bottom:clamp(56px,8vw,80px);}
+  .headshot{width:220px;height:260px;flex:0 0 auto;object-fit:cover;border-radius:6px;background:#e7ddc9;}
+  .author-copy{max-width:640px;}
+  .author-copy .eyebrow{display:block;margin-bottom:8px;}
+  .author-p{font-size:18px;line-height:1.65;color:var(--mut);margin:20px 0 0;}
+  .sig{font-family:'Newsreader',serif;font-style:italic;font-size:34px;color:var(--ink);margin-top:18px;}
+
+  .promise{padding-bottom:clamp(56px,8vw,80px);}
+  .promise .sec-head{margin-bottom:40px;}
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .promise-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 30px;}
+  .promise-t{font-family:'Newsreader',serif;font-weight:500;font-size:23px;color:var(--ink);margin:0 0 12px;}
+  .promise-d{font-size:16px;line-height:1.6;color:var(--mut);margin:0;}
+
+  .final{background:var(--ink);color:var(--paper);text-align:center;padding-top:clamp(72px,10vw,96px);padding-bottom:clamp(72px,10vw,96px);}
+  .final .h2,.final-h{font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,5vw,48px);line-height:1.1;color:var(--paper);}
+  .final-p{font-size:clamp(17px,2vw,19px);color:#c4bdb0;max-width:540px;margin:20px auto 32px;line-height:1.55;}
+  .final .form{margin:0 auto;justify-content:center;}
+  .final .input{border-color:transparent;}
+  .final .btn{background:var(--brass);}
+  .final .btn:hover{background:var(--brass2);}
+  .final .success{margin:0 auto;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:var(--paper);}
+  .final-fine{font-size:13px;color:#8b8478;margin-top:18px;}
+
+  .foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:30px var(--pad);font-size:14px;color:var(--mut);}
+  .foot .disc{flex-basis:100%;font-size:12px;color:#8b8478;line-height:1.5;max-width:760px;}
+
+  @media (max-width: 880px){
+    .hero{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:440px;}
+    .stamp{width:72px;height:72px;top:-16px;right:0;}
+    .cols{grid-template-columns:1fr;gap:0;}
+    .col{border-top:1px solid var(--line);padding:24px 0;}
+    .col:first-child{border-top:2px solid var(--ink);}
+    .promise-grid{grid-template-columns:1fr;}
+    .mrow{grid-template-columns:1fr auto;row-gap:6px;}
+    .msub{grid-column:1 / -1;order:3;}
+    .author{flex-direction:column;align-items:flex-start;text-align:left;}
+  }
+  @media (max-width: 540px){
+    .nav-archive{display:none;}
+    .form{flex-direction:column;align-items:stretch;}
+    .btn{width:100%;}
+    .frame{transform:rotate(0);}
+    .pill{font-size:16px;}
+  }
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+  <header class="head">
+    <div class="brand">
+      <span class="mark">PP</span>
+      <span class="wordmark">Property Playbook</span>
+    </div>
+    <nav class="nav">
+      <a href="https://propertyplaybook.beehiiv.com/archive" class="nav-archive">Archive</a>
+      <a href="#subscribe" class="nav-cta">Subscribe</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">A real-estate investing letter by Mohit Asthana</div>
+      <h1 class="h1">The cash-flow markets<br/>everyone else <em>overlooks.</em></h1>
+      <p class="lede">While everyone's chasing inflated deals in Nashville and Austin, Property Playbook breaks down the overlooked American cities where real estate still cash-flows — the neighborhoods, the programs, and the real numbers. Written by an active investor. No course, no upsell.</p>
+      <form class="form" data-pp-form novalidate>
+        <input class="input" type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required />
+        <button class="btn" type="submit">Read the next issue</button>
+        <div class="errmsg">Please enter a valid email address.</div>
+      </form>
+      <div class="success"><span class="check">✓</span> You're on the list. The next breakdown lands in your inbox.</div>
+      <div class="trust">Free, straight to your inbox. Unsubscribe anytime.</div>
+    </div>
+    <div class="hero-art">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=900&q=80" alt="Row houses on a residential street" />
+        <div class="frame-cap">From the Cleveland issue</div>
+      </div>
+      <div class="stamp">EST.<br/>2024</div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pill">Overlooked markets</div>
+    <div class="pill">Real numbers</div>
+    <div class="pill">An honest "Real Talk" section</div>
+    <div class="pill">No guru fluff</div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="eyebrow">What lands in your inbox</span>
+      <h2 class="h2">A full market teardown, not a hot take.</h2>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <div class="col-n">01</div>
+        <h3 class="col-t">The city at a glance</h3>
+        <p class="col-d">Employment anchors, cost of living, and what the national media keeps getting wrong about a market.</p>
+      </div>
+      <div class="col">
+        <div class="col-n">02</div>
+        <h3 class="col-t">The programs &amp; the plays</h3>
+        <p class="col-d">Housing-agency deals, down-payment assistance, tax credits, and the creative financing that changes the math.</p>
+      </div>
+      <div class="col">
+        <div class="col-n">03</div>
+        <h3 class="col-t">The numbers &amp; the Real Talk</h3>
+        <p class="col-d">Prices, rents, cap rates, reno costs — plus an honest section on the risks, not just the upside.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sample">
+    <div class="sample-card">
+      <div class="sample-rule">
+        <span>Property Playbook</span>
+        <span>From a recent issue · Indianapolis</span>
+      </div>
+      <h3 class="sample-h">The Midwest's Rising Star</h3>
+      <p class="dropcap">While everyone's chasing inflated deals in Nashville and Austin, strategic investors are quietly making moves in the Circle City. Median price around $229k, two-bed rents near $1,250, cap rates of 6–10% — and programs most out-of-state investors never hear about, from the Housing Agency's guaranteed-rent vouchers to up to $15,000 in down-payment assistance…</p>
+      <p class="sample-p">And then the part the gurus skip — the "Real Talk": the winters, the slow city approvals, and the neighborhoods that still need time to develop. Because if it were easy, everyone would be doing it.</p>
+      <div class="sample-fade"></div>
+      <div class="sample-lock">Read the full issue — it's free →</div>
+    </div>
+  </section>
+
+  <section class="sec markets">
+    <div class="sec-head">
+      <span class="eyebrow">In the archive</span>
+      <h2 class="h2">Markets we've broken down.</h2>
+    </div>
+    <ul class="mlist">
+      <li class="mrow">
+        <span class="mcity">Pittsburgh, PA</span>
+        <span class="msub">The Steel City's Silicon Valley transformation</span>
+        <span class="mcap"><span class="mread">Read →</span></span>
+      </li>
+      <li class="mrow">
+        <span class="mcity">Indianapolis, IN</span>
+        <span class="msub">The Midwest's rising star — programs, plays, real numbers</span>
+        <span class="mcap">6–10%<small> cap range</small></span>
+      </li>
+      <li class="mrow">
+        <span class="mcity">Cleveland, OH</span>
+        <span class="msub">Cash flow hiding in plain sight</span>
+        <span class="mcap">7–12%<small> cap range</small></span>
+      </li>
+      <li class="mrow">
+        <span class="mcity">Chicago, IL</span>
+        <span class="msub">Where the value actually sits</span>
+        <span class="mcap"><span class="mread">Read →</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="author">
+    <img class="headshot" src="https://graph.facebook.com/109577611993514/picture?type=large&width=440&height=520" alt="Mohit Asthana" onerror="this.style.display='none'" />
+    <div class="author-copy">
+      <span class="eyebrow">Who's writing</span>
+      <h2 class="h2">Mohit Asthana</h2>
+      <p class="author-p">I'm an active investor who'd rather analyze a market than sell you a course. Property Playbook is where I share the breakdowns I do for my own buying — overlooked cities, the programs that change the math, real numbers, and an honest take on the risks. I'd rather have solid cash flow than bragging rights about a "hot" market.</p>
+      <div class="sig">Mohit</div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="sec-head">
+      <span class="eyebrow">Why it's different</span>
+      <h2 class="h2">No guru. No upsell. No mastermind.</h2>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-card">
+        <h3 class="promise-t">Real numbers, not hype</h3>
+        <p class="promise-d">Prices, rents, cap rates, and reno costs you can actually underwrite — not screenshots of someone's rented Lambo.</p>
+      </div>
+      <div class="promise-card">
+        <h3 class="promise-t">Honest about the risk</h3>
+        <p class="promise-d">Every issue has a "Real Talk" section: the slow approvals, the rough winters, the blocks that still need time.</p>
+      </div>
+      <div class="promise-card">
+        <h3 class="promise-t">Skin in the game</h3>
+        <p class="promise-d">Written by someone actively looking at deals — not a guru with a $2,000 course to sell.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="subscribe">
+    <h2 class="final-h">The next overlooked market<br/>is already in the works.</h2>
+    <p class="final-p">Get it the moment it ships. Property Playbook is free, straight to your inbox.</p>
+    <form class="form" data-pp-form novalidate>
+      <input class="input" type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required />
+      <button class="btn" type="submit">Subscribe free</button>
+      <div class="errmsg">Please enter a valid email address.</div>
+    </form>
+    <div class="success"><span class="check">✓</span> You're on the list. The next breakdown lands in your inbox.</div>
+    <div class="final-fine">No spam. No upsell. Unsubscribe anytime.</div>
+  </section>
+
+  <footer class="foot">
+    <span class="mark mark-sm">PP</span>
+    <span>© 2026 Property Playbook · A real-estate investing letter by Mohit Asthana</span>
+    <span class="disc">Not financial advice. I'm not a CPA, financial advisor, or legal representation. Content reflects personal experience. Do your own due diligence on any deal. Past performance does not guarantee future results.</span>
+  </footer>
+
+  <script>
+    /* ===== Subscribe wiring + UTM passthrough (attribution spine) =====
+       Reads the ad link's UTMs, persists them, and forwards them to beehiiv on
+       submit so utm_content (= the Creative Factory creative_id) survives all the
+       way to the subscriber record. Without this the warehouse can't join Meta
+       spend to subscribers. */
+    var BEEHIIV_SUBSCRIBE = 'https://propertyplaybook.beehiiv.com/subscribe';
+    var BEEHIIV_POST = ''; // optional: beehiiv embed action URL for true inline capture
+
+    var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','ref','fbclid'];
+    var utms = {};
+    (function(){
+      var p = new URLSearchParams(window.location.search);
+      UTM_KEYS.forEach(function(k){ if(p.get(k)) utms[k] = p.get(k); });
+      try {
+        if(Object.keys(utms).length) localStorage.setItem('pp_utms', JSON.stringify(utms));
+        else { var s = localStorage.getItem('pp_utms'); if(s) utms = JSON.parse(s); }
+      } catch(e){}
+    })();
+
+    function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+    function beehiivUrl(email){
+      var u = new URL(BEEHIIV_SUBSCRIBE);
+      if(email) u.searchParams.set('email', email);
+      Object.keys(utms).forEach(function(k){ u.searchParams.set(k, utms[k]); });
+      return u.toString();
+    }
+
+    // Journey step 2-4: scroll depth + engaged time (build "engaged, no submit" audiences)
+    (function(){
+      var fired = {};
+      function depth(){
+        var h = document.documentElement;
+        var max = (h.scrollHeight - h.clientHeight) || 1;
+        var pct = ((h.scrollTop || document.body.scrollTop) / max) * 100;
+        [25,50,75,90].forEach(function(t){ if(pct >= t && !fired[t]){ fired[t] = true; if(window.ppTrack) ppTrack('PP_Scroll'+t); } });
+      }
+      window.addEventListener('scroll', depth, { passive:true });
+      setTimeout(function(){ if(window.ppTrack) ppTrack('PP_Engaged15s'); }, 15000);
+    })();
+
+    var formFocusFired = false;
+    document.querySelectorAll('[data-pp-form]').forEach(function(form){
+      var input = form.querySelector('.input');
+      var err = form.querySelector('.errmsg');
+      var success = form.parentElement.querySelector('.success');
+      input.addEventListener('input', function(){ input.classList.remove('err'); err.classList.remove('show'); });
+      input.addEventListener('focus', function(){ if(!formFocusFired){ formFocusFired = true; if(window.ppTrack) ppTrack('PP_FormFocus'); } });
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = input.value.trim();
+        if(!isValidEmail(email)){
+          input.classList.add('err'); err.classList.add('show'); input.focus();
+          if(window.ppTrack) ppTrack('PP_SubmitInvalid');
+          return;
+        }
+        // Journey step 5: lead captured. Re-init pixels with the email for Advanced Matching
+        // (hashed client-side by Meta) so this person matches into audiences/lookalikes.
+        try { (window.PP_PIXELS||[]).forEach(function(id){ fbq('init', id, { em: email }); }); } catch(e2){}
+        // Persist email so the /welcome page (beehiiv's post-subscribe redirect) can fire
+        // CompleteRegistration with advanced matching + the same creative attribution. No Zapier.
+        try { localStorage.setItem('pp_email', email); } catch(e3){}
+        // Sync hub: fire-and-forget push to GoHighLevel CRM + beehiiv (no Zapier). If the
+        // endpoint isn't configured yet it no-ops; the beehiiv redirect below still subscribes.
+        try {
+          fetch('/api/lead-sync', { method:'POST', headers:{'Content-Type':'application/json'},
+            keepalive:true, body: JSON.stringify({
+              email: email, source: 'Property Playbook LP',
+              utm_source: utms.utm_source, utm_medium: utms.utm_medium, utm_campaign: utms.utm_campaign,
+              utm_content: utms.utm_content, utm_term: utms.utm_term
+            }) }).catch(function(){});
+        } catch(e4){}
+        if(window.ppTrack) ppTrack('Lead', { content_name: PP_ATTR.angle || 'general', value: 0.0, currency: 'USD' });
+        form.style.display = 'none';
+        if(success) success.classList.add('show');
+        if(BEEHIIV_POST){
+          var data = new FormData(); data.append('email', email);
+          Object.keys(utms).forEach(function(k){ data.append(k, utms[k]); });
+          fetch(BEEHIIV_POST, { method:'POST', body:data, mode:'no-cors' }).catch(function(){});
+        } else {
+          var url = beehiivUrl(email);
+          setTimeout(function(){ window.location.href = url; }, 900);
+        }
+      });
+    });
+
+    document.querySelectorAll('a[href="#subscribe"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById('subscribe').scrollIntoView({behavior:'smooth', block:'start'});
+        var el = document.querySelector('#subscribe .input'); if(el) setTimeout(function(){ el.focus(); }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property Playbook — Newsletter Economics Calculator</title>
+<style>
+  :root{
+    --persimmon:#e0431f; --ink:#1a2238; --paper:#f7f3ec; --card:#fffdf9;
+    --line:#e3dccf; --muted:#7a7466; --good:#2f7d4f; --warn:#b8860b; --mono:'Space Mono',ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'IBM Plex Sans',-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.45}
+  header{padding:28px 24px 18px;border-bottom:3px solid var(--ink);background:var(--card)}
+  h1{margin:0;font-size:24px;letter-spacing:-.3px}
+  h1 span{color:var(--persimmon)}
+  .sub{color:var(--muted);font-size:14px;margin-top:4px}
+  .wrap{max-width:1180px;margin:0 auto;padding:22px 24px 60px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px 18px 8px}
+  .card h2{margin:0 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--persimmon)}
+  .card p.hint{margin:0 0 14px;font-size:12px;color:var(--muted)}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:9px 0}
+  .row label{font-size:13px;flex:1}
+  .row .unit{font-size:11px;color:var(--muted);width:34px;text-align:right}
+  input[type=number]{width:96px;padding:6px 8px;border:1px solid var(--line);border-radius:3px;
+    font-family:var(--mono);font-size:13px;text-align:right;background:#fff;color:var(--ink)}
+  input:focus{outline:2px solid var(--persimmon);border-color:var(--persimmon)}
+  .out{background:var(--ink);color:var(--paper);border-radius:4px;padding:20px 22px;margin-top:22px}
+  .out h2{color:#ffd9cd;margin:0 0 14px;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:880px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+  .stat{border-left:3px solid var(--persimmon);padding-left:12px}
+  .stat .n{font-family:var(--mono);font-size:22px;font-weight:700}
+  .stat .l{font-size:11px;color:#c9c3b6;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+  .bar{height:26px;background:#2a3454;border-radius:3px;overflow:hidden;margin:16px 0 6px;position:relative}
+  .bar .fill{height:100%;background:linear-gradient(90deg,var(--persimmon),#ff7a52);transition:width .25s}
+  .bar .mark{position:absolute;top:-2px;font-size:11px;color:#ffd9cd}
+  .ladder-row{display:grid;grid-template-columns:1.6fr .8fr .8fr .9fr 1fr;gap:8px;align-items:center;
+    padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .ladder-row.head{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);border-bottom:2px solid var(--ink)}
+  .ladder-row input{width:100%;padding:5px 6px}
+  .ladder-row .rev{font-family:var(--mono);text-align:right;font-weight:600}
+  .tag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:3px;background:#efe7d8;color:var(--muted);margin-left:6px}
+  .net{font-weight:700}
+  .net.neg{color:var(--good)}.net.pos{color:var(--warn)}
+  footer{font-size:11px;color:var(--muted);margin-top:26px;line-height:1.6}
+  .pulse{color:var(--persimmon);font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <h1>Property Playbook <span>// Newsletter Economics</span></h1>
+  <div class="sub">Walk the funnel from ad dollar to $1M backend. Every field is live. Numbers are pre-filled with your current reality (131 subs, Launch plan) so you can sandbox toward the goal.</div>
+</header>
+
+<div class="wrap">
+
+<!-- THE MODEL -->
+<div class="card" style="border-left:4px solid var(--persimmon);margin-bottom:22px">
+  <h2>The model, in three layers</h2>
+  <p class="hint">The newsletter is not the business. It is the trust machine that feeds the business. Read top to bottom, then play with the sections below.</p>
+  <div class="ladder-row head" style="grid-template-columns:0.5fr 1.4fr 2fr">
+    <div>Layer</div><div>What it is</div><div>What it does</div>
+  </div>
+  <div class="ladder-row" style="grid-template-columns:0.5fr 1.4fr 2fr">
+    <div><b>1</b></div><div>Newsletter <span class="tag">self-funding</span></div>
+    <div>Builds trust at scale. Net CAC is negative (Boosts pay you to grow), so the list funds itself.</div>
+  </div>
+  <div class="ladder-row" style="grid-template-columns:0.5fr 1.4fr 2fr">
+    <div><b>2</b></div><div>Education ladder <span class="tag">$299 / $2.5k / $4k</span></div>
+    <div>Course, cohort, 1:1 mentorship. Pays operating costs AND qualifies high-intent buyers. These buyers are the bottom of the LP funnel, not the top.</div>
+  </div>
+  <div class="ladder-row" style="grid-template-columns:0.5fr 1.4fr 2fr;border-bottom:none">
+    <div><b>3</b></div><div>Syndication <span class="tag">the $1M+</span></div>
+    <div>Converts trusted relationships into AUM. Fees pay a salary; carry builds the net worth. Scales past $1M without more list.</div>
+  </div>
+  <p class="hint" style="margin-top:14px"><b>Three numbers worth memorizing:</b>
+  &nbsp;• Steady syndication fees/yr = capital raised &times; (acq% + hold &times; mgmt%).
+  &nbsp;• Carry per exit = equity &times; (multiple &minus; 1) &times; carry%.
+  &nbsp;• Each qualified subscriber &asymp; $300 of first-raise capital. A no-name guru is worth a tenth of that. Your 45-unit record and sales skill are the difference.</p>
+</div>
+
+<div class="grid">
+
+  <!-- ACQUISITION -->
+  <div class="card">
+    <h2>1 · Acquisition</h2>
+    <p class="hint">What it costs to add a subscriber, and how Boosts offset it. Net CAC is the real number that matters.</p>
+    <div class="row"><label>Meta ad spend / month</label><input id="adspend" type="number" value="1500"><span class="unit">$</span></div>
+    <div class="row"><label>Cost per subscriber (Meta CAC)</label><input id="cac" type="number" value="2.50" step="0.1"><span class="unit">$</span></div>
+    <div class="row"><label>Boost revenue / new sub (stacked)</label><input id="boost" type="number" value="5.00" step="0.1"><span class="unit">$</span></div>
+    <div class="row"><label>Organic subs / month (free)</label><input id="organic" type="number" value="150"><span class="unit"># </span></div>
+    <div class="row"><label>Monthly list churn</label><input id="churn" type="number" value="3" step="0.5"><span class="unit">%</span></div>
+    <div class="row"><label>Current list size</label><input id="list0" type="number" value="131"><span class="unit"># </span></div>
+  </div>
+
+  <!-- FRONT-END / NEWSLETTER REVENUE -->
+  <div class="card">
+    <h2>2 · Newsletter (front-end) revenue</h2>
+    <p class="hint">Money the list throws off before any offer. Boosts breakeven your ads. Sponsorships kick in once the list is big enough to sell.</p>
+    <div class="row"><label>Sends per month</label><input id="sends" type="number" value="4"><span class="unit"># </span></div>
+    <div class="row"><label>Open rate</label><input id="openrate" type="number" value="40"><span class="unit">%</span></div>
+    <div class="row"><label>Sponsorship CPM (per 1k opens)</label><input id="cpm" type="number" value="30"><span class="unit">$</span></div>
+    <div class="row"><label>Sponsored sends sold (of total)</label><input id="sponsorfill" type="number" value="50"><span class="unit">%</span></div>
+    <div class="row"><label>Avg target / paid-sub list size</label><input id="listtarget" type="number" value="5000"><span class="unit"># </span></div>
+    <p class="hint" style="margin-top:6px">Sponsorship revenue is modeled at the <b>target list size</b> so you can see the steady-state, not today's tiny list.</p>
+  </div>
+
+</div>
+
+<!-- BACKEND LADDER -->
+<div class="card" style="margin-top:22px">
+  <h2>3 · Backend offer ladder</h2>
+  <p class="hint">This is where the $1M lives. Take-rate = % of the <b>target list</b> that buys each year. Edit price + take-rate to sculpt your path. (Defaults are illustrative, not promises.)</p>
+  <div class="ladder-row head">
+    <div>Offer</div><div>Price $</div><div>Take-rate %/yr</div><div>Buyers/yr</div><div>Revenue/yr</div>
+  </div>
+  <div id="ladder"></div>
+  <div class="ladder-row" style="border-bottom:none;font-weight:700">
+    <div>Backend total</div><div></div><div></div><div id="lad-buyers" class="rev"></div><div id="lad-rev" class="rev"></div>
+  </div>
+</div>
+
+<!-- OUTPUT -->
+<div class="out">
+  <h2>The walk to $1,000,000 / year</h2>
+  <div class="stat-grid">
+    <div class="stat"><div class="n" id="o-netcac">—</div><div class="l">Net CAC / sub</div></div>
+    <div class="stat"><div class="n" id="o-newsubs">—</div><div class="l">New subs / mo</div></div>
+    <div class="stat"><div class="n" id="o-acqpl">—</div><div class="l">Acquisition P/L / mo</div></div>
+    <div class="stat"><div class="n" id="o-months">—</div><div class="l">Months to target list</div></div>
+  </div>
+  <div class="bar"><div class="fill" id="bar"></div><div class="mark" id="barmark" style="right:6px">$1M</div></div>
+  <div class="stat-grid" style="margin-top:6px">
+    <div class="stat"><div class="n" id="o-front">—</div><div class="l">Front-end rev / yr</div></div>
+    <div class="stat"><div class="n" id="o-back">—</div><div class="l">Backend rev / yr</div></div>
+    <div class="stat"><div class="n" id="o-total">—</div><div class="l">Total rev / yr</div></div>
+    <div class="stat"><div class="n" id="o-gap" class="pulse">—</div><div class="l">Gap to $1M</div></div>
+  </div>
+  <p id="verdict" style="margin:16px 0 0;font-size:14px;color:#ffd9cd"></p>
+</div>
+
+<!-- SYNDICATION ENGINE -->
+<div class="card" style="margin-top:22px;border-left:4px solid var(--persimmon)">
+  <h2>4 · Syndication engine (the real scale)</h2>
+  <p class="hint">Fees are charged on capital raised from investors (LPs). The newsletter + education ladder is the trust machine that qualifies those LPs. This is lumpy and back-ended: asset-management fees are steady, carry is a one-time payday at exit.</p>
+  <div class="grid" style="gap:18px">
+    <div>
+      <div class="row"><label>Equity raised per deal</label><input id="s-equity" type="number" value="2000000"><span class="unit">$</span></div>
+      <div class="row"><label>Deals per year</label><input id="s-deals" type="number" value="2"><span class="unit"># </span></div>
+      <div class="row"><label>Hold period before exit</label><input id="s-hold" type="number" value="5"><span class="unit">yr</span></div>
+      <div class="row"><label>Equity multiple at exit</label><input id="s-mult" type="number" value="1.8" step="0.1"><span class="unit">x</span></div>
+    </div>
+    <div>
+      <div class="row"><label>Acquisition fee</label><input id="s-acq" type="number" value="1" step="0.25"><span class="unit">%</span></div>
+      <div class="row"><label>Asset-management fee / yr</label><input id="s-amf" type="number" value="2" step="0.25"><span class="unit">%</span></div>
+      <div class="row"><label>Disposition fee</label><input id="s-disp" type="number" value="1" step="0.25"><span class="unit">%</span></div>
+      <div class="row"><label>Carry / promote (of profit)</label><input id="s-carry" type="number" value="20" step="1"><span class="unit">%</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="out" style="border:2px solid var(--persimmon)">
+  <h2>Syndication — 10-year projection</h2>
+  <div class="stat-grid">
+    <div class="stat"><div class="n" id="s-aum">—</div><div class="l">Peak AUM (equity)</div></div>
+    <div class="stat"><div class="n" id="s-recur">—</div><div class="l">Steady fees / yr (acq + AMF)</div></div>
+    <div class="stat"><div class="n" id="s-1m">—</div><div class="l">Year recurring fees hit $1M</div></div>
+    <div class="stat"><div class="n" id="s-carrytot">—</div><div class="l">Carry realized (10 yr)</div></div>
+  </div>
+  <div id="s-table" style="margin-top:16px;font-family:var(--mono);font-size:12px"></div>
+  <p id="s-verdict" style="margin:14px 0 0;font-size:14px;color:#ffd9cd"></p>
+</div>
+
+<!-- TRUST -> LP FUNNEL -->
+<div class="card" style="margin-top:22px;border-left:4px solid var(--ink)">
+  <h2>5 · Trust &rarr; LP funnel</h2>
+  <p class="hint">How a newsletter audience becomes raised capital. Your edge: ~45 units operated (LPs can underwrite you) + enterprise-sales close skill. Both push the rates below well above a typical guru's.</p>
+  <div class="grid" style="gap:18px">
+    <div>
+      <div class="row"><label>List size</label><input id="f-list" type="number" value="10000"><span class="unit"># </span></div>
+      <div class="row"><label>% accredited &amp; passive-interested</label><input id="f-suit" type="number" value="8" step="0.5"><span class="unit">%</span></div>
+      <div class="row"><label>% of pool who join a deal room / webinar</label><input id="f-room" type="number" value="25" step="1"><span class="unit">%</span></div>
+    </div>
+    <div>
+      <div class="row"><label>% of attendees who invest (your close)</label><input id="f-close" type="number" value="15" step="1"><span class="unit">%</span></div>
+      <div class="row"><label>Average LP check</label><input id="f-check" type="number" value="100000"><span class="unit">$</span></div>
+      <div class="row"><label>Avg deals an LP funds (loyalty/recycle)</label><input id="f-recycle" type="number" value="3" step="0.5"><span class="unit">x</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="out" style="border:2px solid var(--ink)">
+  <h2>What the audience can raise</h2>
+  <div class="stat-grid">
+    <div class="stat"><div class="n" id="f-pool">—</div><div class="l">LP-suitable pool</div></div>
+    <div class="stat"><div class="n" id="f-lps">—</div><div class="l">Investing LPs</div></div>
+    <div class="stat"><div class="n" id="f-first">—</div><div class="l">First-raise capital</div></div>
+    <div class="stat"><div class="n" id="f-lifetime">—</div><div class="l">Lifetime capital (w/ recycle)</div></div>
+  </div>
+  <div class="stat-grid" style="margin-top:14px">
+    <div class="stat"><div class="n" id="f-need2">—</div><div class="l">Subs needed to raise $2M</div></div>
+    <div class="stat"><div class="n" id="f-need5">—</div><div class="l">Subs needed to raise $5M</div></div>
+    <div class="stat"><div class="n" id="f-need10">—</div><div class="l">Subs to raise $10M / yr</div></div>
+    <div class="stat"><div class="n" id="f-perlp">—</div><div class="l">Subs per investing LP</div></div>
+  </div>
+  <p id="f-verdict" style="margin:14px 0 0;font-size:14px;color:#ffd9cd"></p>
+</div>
+
+<footer>
+  Not financial advice. Securities note: raising capital from a newsletter audience implicates SEC Reg D (506b vs 506c), accredited-investor rules, and broker-dealer limits. Get securities counsel before any capital-raise content goes near an ad. Illustrative model only. Take-rates and CPMs are planning assumptions, not guaranteed results. Past performance does not guarantee future results. Built for sandboxing Property Playbook / IGTRE economics.
+</footer>
+</div>
+
+<script>
+// ---- Backend ladder seed (real-estate education ladder) ----
+const offers = [
+  {name:"Underwriter SaaS ($29/mo)",  tag:"software", price:348, take:4},   // recurring, annualized
+  {name:"The Playbook (course)",      tag:"core",     price:299, take:2},
+  {name:"Inner Circle membership",    tag:"recurring",price:588, take:1.5}, // $49/mo annualized
+  {name:"Deal Teardown cohort",       tag:"cohort",   price:2500,take:0.4},
+  {name:"1:1 Mentorship",             tag:"high",     price:4000,take:0.2},
+  {name:"Done-with-you / Syndication",tag:"whale",    price:25000,take:0.05},
+];
+
+const $ = id => document.getElementById(id);
+const fmt = n => "$"+Math.round(n).toLocaleString();
+const fmt0 = n => Math.round(n).toLocaleString();
+
+// build ladder rows
+const ladEl = $("ladder");
+offers.forEach((o,i)=>{
+  const r=document.createElement("div"); r.className="ladder-row";
+  r.innerHTML=`
+    <div>${o.name}<span class="tag">${o.tag}</span></div>
+    <div><input type="number" id="p${i}" value="${o.price}"></div>
+    <div><input type="number" id="t${i}" step="0.05" value="${o.take}"></div>
+    <div class="rev" id="b${i}">—</div>
+    <div class="rev" id="r${i}">—</div>`;
+  ladEl.appendChild(r);
+});
+
+function calc(){
+  const adspend=+$("adspend").value, cac=+$("cac").value, boost=+$("boost").value,
+        organic=+$("organic").value, churn=+$("churn").value/100, list0=+$("list0").value;
+  const sends=+$("sends").value, openrate=+$("openrate").value/100, cpm=+$("cpm").value,
+        fill=+$("sponsorfill").value/100, listT=+$("listtarget").value;
+
+  // acquisition
+  const paidSubs = cac>0 ? adspend/cac : 0;
+  const netCac = cac - boost;                 // per paid sub
+  const acqPL  = -(netCac*paidSubs);          // monthly profit/loss from acquisition (boost - spend)
+  const newSubs = paidSubs + organic;
+  const netGrowthPerMo = newSubs - list0*churn; // rough; recompute against current list later
+
+  // months to target (simple churn-aware growth from list0)
+  let list=list0, months=0;
+  while(list<listT && months<600){ list = list + newSubs - list*churn; months++; }
+  const reachable = list>=listT;
+
+  // front-end newsletter rev at TARGET list (annual)
+  const opensPerSend = listT*openrate;
+  const revPerSponsoredSend = (opensPerSend/1000)*cpm;
+  const sponsoredSends = sends*fill;
+  const sponsorMonthly = revPerSponsoredSend*sponsoredSends;
+  const boostAnnual = Math.max(0, boost*paidSubs*12); // boost is front-end-ish cash
+  const frontAnnual = sponsorMonthly*12 + boostAnnual;
+
+  // backend ladder at TARGET list
+  let backBuyers=0, backRev=0;
+  offers.forEach((o,i)=>{
+    const price=+$("p"+i).value, take=+$("t"+i).value/100;
+    const buyers=listT*take, rev=buyers*price;
+    backBuyers+=buyers; backRev+=rev;
+    $("b"+i).textContent=fmt0(buyers);
+    $("r"+i).textContent=fmt(rev);
+  });
+  $("lad-buyers").textContent=fmt0(backBuyers);
+  $("lad-rev").textContent=fmt(backRev);
+
+  const total=frontAnnual+backRev;
+  const gap=1000000-total;
+
+  // paint outputs
+  $("o-netcac").innerHTML = (netCac<=0?'<span style="color:#7be0a0">':'')+fmt(netCac)+(netCac<=0?'</span>':'');
+  $("o-newsubs").textContent=fmt0(newSubs);
+  $("o-acqpl").innerHTML = (acqPL>=0?'<span style="color:#7be0a0">+':'<span style="color:#ffb3a0">')+fmt(acqPL)+'</span>';
+  $("o-months").textContent = reachable? months+" mo" : "60+ mo";
+  $("o-front").textContent=fmt(frontAnnual);
+  $("o-back").textContent=fmt(backRev);
+  $("o-total").textContent=fmt(total);
+  $("o-gap").innerHTML = gap<=0? '<span style="color:#7be0a0">CLEARED ✅</span>' : fmt(gap);
+
+  const pct=Math.min(100, total/1000000*100);
+  $("bar").style.width=pct.toFixed(1)+"%";
+
+  let v="";
+  if(gap<=0){ v=`This config clears $1M. Backend is doing the heavy lifting (${fmt(backRev)}/yr). Pressure-test the take-rates: are they realistic for a ${fmt0(listT)} list?`; }
+  else {
+    const need = gap/ (listT||1);
+    v=`You're ${pct.toFixed(0)}% of the way. To close ${fmt(gap)}: either grow the target list, lift backend take-rates, or add ${fmt(need)}/subscriber/yr of value. The single biggest lever below is usually the high-ticket / done-with-you tier.`;
+  }
+  if(netCac<=0) v += ` Acquisition is net-positive (Boosts pay you ${fmt(-acqPL)}/mo to grow) - so growth is self-funding.`;
+  $("verdict").textContent=v;
+}
+
+function syndCalc(){
+  const E=+$("s-equity").value, deals=+$("s-deals").value, hold=+$("s-hold").value,
+        mult=+$("s-mult").value, acq=+$("s-acq").value/100, amf=+$("s-amf").value/100,
+        disp=+$("s-disp").value/100, carry=+$("s-carry").value/100;
+  const raisedPerYr = E*deals;
+  // year-by-year sim, 10 yrs. vintages exit after `hold`.
+  const YEARS=10; let rows=[], aumPeak=0, carryTot=0, year1m=null, steadyFees=0;
+  const vintages=[]; // {year, equity}
+  for(let y=1;y<=YEARS;y++){
+    vintages.push({year:y, equity:raisedPerYr});
+    // AUM = equity in deals not yet exited (exit at start of year + hold)
+    let aum=0;
+    vintages.forEach(v=>{ if(y < v.year+hold) aum+=v.equity; });
+    aumPeak=Math.max(aumPeak,aum);
+    const acqFee=raisedPerYr*acq;                 // on this year's new raise
+    const amfFee=aum*amf;                         // on live AUM
+    const recurring=acqFee+amfFee;
+    // exits this year
+    let dispFee=0, carryYr=0, exitEq=0;
+    vintages.forEach(v=>{ if(y===v.year+hold){ exitEq+=v.equity; }});
+    if(exitEq>0){ dispFee=exitEq*mult*disp; carryYr=exitEq*(mult-1)*carry; carryTot+=carryYr; }
+    const totalYr=recurring+dispFee+carryYr;
+    if(year1m===null && recurring>=1000000) year1m=y;
+    if(y===YEARS) steadyFees=recurring;
+    rows.push({y,aum,recurring,exitEq,carryYr,totalYr});
+  }
+  $("s-aum").textContent=fmt(aumPeak);
+  $("s-recur").textContent=fmt(steadyFees);
+  $("s-1m").textContent= year1m? ("Year "+year1m) : "10+ yrs";
+  $("s-carrytot").innerHTML='<span style="color:#7be0a0">'+fmt(carryTot)+'</span>';
+  let html='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;color:#c9c3b6;border-bottom:1px solid #2a3454;padding-bottom:4px;font-size:10px;text-transform:uppercase">'+
+    '<div>Yr</div><div>Live AUM</div><div>Recurring fees</div><div>Exits</div><div>Carry payday</div></div>';
+  rows.forEach(r=>{ html+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:3px 0;border-bottom:1px solid #232c47">'+
+    `<div>${r.y}</div><div>${fmt(r.aum)}</div><div>${fmt(r.recurring)}</div><div>${r.exitEq?fmt(r.exitEq):'-'}</div>`+
+    `<div style="color:${r.carryYr?'#7be0a0':'#5a6480'}">${r.carryYr?fmt(r.carryYr):'-'}</div></div>`; });
+  $("s-table").innerHTML=html;
+  let v=`Raising ${fmt(raisedPerYr)}/yr builds to ${fmt(aumPeak)} of AUM. `;
+  if(year1m) v+=`Recurring fees (acquisition + asset management) cross $1M in year ${year1m}. `;
+  else v+=`Recurring fees don't reach $1M in 10 yrs at this raise pace - lift deals/year or equity/deal. `;
+  v+=`The real wealth is carry: ${fmt(carryTot)} over the decade, paid in lumps at each exit. The education ladder above funds operations and qualifies the LPs who write these checks.`;
+  $("s-verdict").textContent=v;
+}
+
+function lpCalc(){
+  const list=+$("f-list").value, suit=+$("f-suit").value/100, room=+$("f-room").value/100,
+        close=+$("f-close").value/100, check=+$("f-check").value, recycle=+$("f-recycle").value;
+  const pool=list*suit;
+  const attendees=pool*room;
+  const lps=attendees*close;
+  const first=lps*check;
+  const lifetime=first*recycle;
+  // back-solve: subs needed to raise $T in a first raise = T / (check*suit*room*close)
+  const dollarPerSub = check*suit*room*close;
+  const need = T => dollarPerSub>0 ? Math.ceil(T/dollarPerSub) : 0;
+  const subsPerLp = lps>0 ? list/lps : 0;
+  $("f-pool").textContent=fmt0(pool);
+  $("f-lps").textContent=fmt0(lps);
+  $("f-first").textContent=fmt(first);
+  $("f-lifetime").innerHTML='<span style="color:#7be0a0">'+fmt(lifetime)+'</span>';
+  $("f-need2").textContent=fmt0(need(2000000));
+  $("f-need5").textContent=fmt0(need(5000000));
+  $("f-need10").textContent=fmt0(need(10000000));
+  $("f-perlp").textContent=fmt0(subsPerLp);
+  let v=`A ${fmt0(list)} list yields about ${fmt0(lps)} investing LPs writing ${fmt(check)} checks - `+
+        `${fmt(first)} on a first raise, ${fmt(lifetime)} over their lifetime as repeat investors. `;
+  v+=`Each subscriber is worth ${fmt(dollarPerSub)} of first-raise capital at these rates. `;
+  v+=`To raise $10M/yr (the level where syndication fees clear $1M) you need roughly ${fmt0(need(10000000))} qualified subs. `;
+  v+=`Your 45-unit record and sales background are what justify a ${(close*100).toFixed(0)}% close - a no-name guru would be at 2-3%.`;
+  $("f-verdict").textContent=v;
+}
+
+document.querySelectorAll("input").forEach(el=>el.addEventListener("input",()=>{calc();syndCalc();lpCalc();}));
+calc(); syndCalc(); lpCalc();
+</script>
+</body>
+</html>
