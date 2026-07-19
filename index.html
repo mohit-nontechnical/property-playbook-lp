@@ -220,8 +220,8 @@
   <section class="hero">
     <div class="hero-copy">
       <div class="eyebrow">A real-estate investing letter by Mohit Asthana</div>
-      <h1 class="h1">The cash-flow markets<br/>everyone else <em>overlooks.</em></h1>
-      <p class="lede">While everyone's chasing inflated deals in Nashville and Austin, Property Playbook breaks down the overlooked American cities where real estate still cash-flows — the neighborhoods, the programs, and the real numbers. Written by an active investor. No course, no upsell.</p>
+      <h1 class="h1" id="hero-headline">The cash-flow markets<br/>everyone else <em>overlooks.</em></h1>
+      <p class="lede" id="hero-lede">While everyone's chasing inflated deals in Nashville and Austin, Property Playbook breaks down the overlooked American cities where real estate still cash-flows — the neighborhoods, the programs, and the real numbers. Written by an active investor. No course, no upsell.</p>
       <form class="form" data-pp-form novalidate>
         <input class="input" type="email" name="email" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required />
         <button class="btn" type="submit">Read the next issue</button>
@@ -232,12 +232,58 @@
     </div>
     <div class="hero-art">
       <div class="frame">
-        <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=900&q=80" alt="Row houses on a residential street" />
+        <img src="/images/hero-home.jpg" alt="Single-family rental home on a quiet residential street at golden hour" />
         <div class="frame-cap">From the Cleveland issue</div>
       </div>
       <div class="stamp">EST.<br/>2024</div>
     </div>
   </section>
+
+  <script>
+    /* ===== Angle headline-swap (message match) =====
+       utm_term (= angle slug on the ad link) swaps the hero headline + lede so a
+       "Truth About Turnkey" ad lands on a turnkey hero. Every key maps to a REAL
+       published PP post (see CANDIDATE-HEADLINES.md); do not invent new slugs.
+       Unknown or missing utm_term keeps the default copy below untouched, and with
+       JS disabled the static default renders as-is. Map values are hardcoded here
+       (utm_term only SELECTS a key, it is never rendered), so no injection risk. */
+    (function(){
+      var ANGLES = {
+        turnkey: {
+          h: 'The truth about<br/><em>turnkey rentals.</em>',
+          p: 'Turnkey is the number one passive-income pitch sold to beginners. Property Playbook breaks down what these deals actually cost after real expenses, and the risks that never make the brochure. Written by an active investor. No course, no upsell.'
+        },
+        short_term: {
+          h: 'The truth about<br/><em>short-term rentals.</em>',
+          p: 'The projection tools sell the dream. Property Playbook runs the real numbers on short-term rentals, from occupancy to the city ordinances that change the math overnight. Written by an active investor. No course, no upsell.'
+        },
+        adu: {
+          h: 'The truth<br/>about <em>ADUs.</em>',
+          p: 'ADUs are the trendiest pitch in real estate right now. Property Playbook breaks down the real build costs, the permits, and whether the rent actually pencils. Written by an active investor. No course, no upsell.'
+        },
+        why_not_buy: {
+          h: 'Why I haven\'t bought<br/>in <em>two years.</em>',
+          p: 'I\'m an active investor and I haven\'t bought in two years. Property Playbook is where I share the math behind sitting out, the deals I pass on, and what would change my mind. No course, no upsell.'
+        },
+        expensive_poor: {
+          h: 'It\'s expensive<br/>to be <em>poor.</em>',
+          p: 'The less you start with, the more everything costs. Property Playbook breaks down the real math of money and property, with an honest take on the risks. Written by an active investor. No course, no upsell.'
+        },
+        capital_stack: {
+          h: 'The capital stack,<br/><em>translated.</em>',
+          p: 'Real estate deals hide behind jargon. Property Playbook translates the capital stack: who gets paid first, where your money actually sits, and the risks the pitch deck skips. Written by an active investor. No course, no upsell.'
+        }
+      };
+      var slug = '';
+      try { slug = new URLSearchParams(window.location.search).get('utm_term') || ''; } catch(e){}
+      if (!slug || !Object.prototype.hasOwnProperty.call(ANGLES, slug)) return;
+      var a = ANGLES[slug];
+      var h = document.getElementById('hero-headline');
+      var p = document.getElementById('hero-lede');
+      if (h) h.innerHTML = a.h;
+      if (p) p.textContent = a.p;
+    })();
+  </script>
 
   <section class="pillars">
     <div class="pill">Overlooked markets</div>

@@ -66,6 +66,11 @@ async function toBeehiiv(lead, sendWelcome) {
     utm_source: lead.utm_source || "meta",
     utm_medium: lead.utm_medium || "paid_social",
     utm_campaign: lead.utm_campaign || undefined,
+    // Top-level utm_content/utm_term so they land as subscriber ATTRIBUTES —
+    // utm_content (= creative_id) is the warehouse join key for net CAC per
+    // creative. Custom fields below stay as a belt-and-suspenders copy.
+    utm_content: lead.utm_content || undefined,
+    utm_term: lead.utm_term || undefined,
     referring_site: "property-playbook-lp.vercel.app",
     custom_fields: [
       lead.utm_content ? { name: "creative_id", value: lead.utm_content } : null,
