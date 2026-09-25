@@ -43,8 +43,9 @@ Meta ads → this LP → email capture → redirect to `propertyplaybook.beehiiv
 ## Copy rules
 - **No fabrication, ever.** Ground all copy/testimonials/numbers in Mohit's real deals only:
   Cleveland multifamily 8-unit (sold at ~$35k loss), 14-unit, an SFH, 22-unit, minority-GP
-  strip mall. First deal 4/15/2020. Do not invent deals, do not use "45 units," do not
-  reference Tucson — these are known fabrication artifacts to avoid.
+  strip mall. First deal 4/15/2020. Do not invent deals or reference Tucson (a known
+  fabrication artifact). "45 units and $10M worth of deals by 30" IS approved (Mohit
+  2026-09-25), used verbatim and cumulative; the old ban on "45 units" is superseded.
 - **Voice:** contrarian "The Truth About [X]" framing only, sourced from real published PP
   posts. No aspirational/guru/hype language ("build wealth fast," "passive income that
   works," "never worry about money") — breaks message-match and attracts junk subs.
